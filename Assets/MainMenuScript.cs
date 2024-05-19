@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LogicScript : MonoBehaviour
+public class MainMenuScript : MonoBehaviour
 {
     public GameObject ExitGamePrompt;
     
@@ -25,16 +25,17 @@ public class LogicScript : MonoBehaviour
     // Scene Changer
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
-        Debug.Log("Loaded Scene");
+        GeneralUseScript.ChangeScene(sceneName);
     }
 
+    //game exit function
     public void QuitGame()
     {
         Debug.Log("Closing Game");
         Application.Quit();
     }
 
+    //toggle visibility of game exit prompt
     public void TogglePrompt()
     {
         if (ExitGamePrompt.activeSelf)
